@@ -6,7 +6,7 @@ export default function Navbar() {
             Henry
         </Link>
         <ul>
-            <CustomLink to="/">About</CustomLink>
+            <CustomLink to="/">Home</CustomLink>
             <CustomLink to="/skills">Skills</CustomLink>
             <CustomLink to="/projects">Projects</CustomLink>
         </ul>

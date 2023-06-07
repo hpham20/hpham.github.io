@@ -5,10 +5,10 @@ export default function Footer() {
     return (
       <div className="footer">
         <a href="https://www.linkedin.com/in/henry-pham-07/">
-          <FaLinkedin size={25} style={{color: "white"}} />
+          <FaLinkedin size={25} className="footer-icon" />
         </a>
         <a href="https://github.com/hpham20">
-        <FaGithub size={25} style={{color: "white"}} />
+        <FaGithub size={25} className="footer-icon" />
         </a>
       </div>
     )
