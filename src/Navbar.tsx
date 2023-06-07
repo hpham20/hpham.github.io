@@ -1,15 +1,28 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
+import { GiHamburgerMenu } from "react-icons/gi";
+import { useState } from "react";
 
 export default function Navbar() {
+    const [isActive, setIsActive] = useState(false);
+
+    const handleToggle = () => {
+        setIsActive(!isActive)
+    }
+
     return <nav className="nav">
         <Link to="/" className="site-title">
             Henry
         </Link>
-        <ul>
-            <CustomLink to="/">Home</CustomLink>
-            <CustomLink to="/skills">Skills</CustomLink>
-            <CustomLink to="/projects">Projects</CustomLink>
-        </ul>
+        <a href="javascript:;" className="toggle-button" onClick={handleToggle}>
+          <GiHamburgerMenu size={25} style={{ color: "white" }} />
+        </a>
+        <div className={`nav-links ${isActive ? "active" : ""}`}>
+            <ul>
+                <CustomLink to="/">Home</CustomLink>
+                <CustomLink to="/skills">Skills</CustomLink>
+                <CustomLink to="/projects">Projects</CustomLink>
+            </ul>
+        </div>
     </nav>
 }
 

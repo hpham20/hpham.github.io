@@ -20,6 +20,8 @@ body {
 
 .site-title {
     font-size: 2rem;
+    color: white;
+    text-decoration: none;
 }
 
 .nav {
@@ -30,7 +32,6 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
-    padding: 0 5rem;
     transition: background-color 0.3s ease;
     /* border: 5px solid rgb(255, 213, 0); */
 }
@@ -39,7 +40,11 @@ body {
     background-color: rgba(0, 0, 0, 0.65);
 }
 
-.nav ul {
+.site-title {
+    margin: .5rem;
+}
+
+.nav-links ul {
     padding: 0;
     margin: 0;
     list-style: none;
@@ -48,13 +53,18 @@ body {
     gap: 1rem;
 }
 
-.nav a {
+.nav-links li {
     color: inherit;
-    text-decoration: none;
     height: 50%;
     display: flex;
     align-items: center;
     padding: .25rem .5rem;
+}
+
+.nav-links a {
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
 }
 
 
@@ -66,6 +76,65 @@ body {
 .nav li:hover {
     background-color: rgba(208, 208, 208, 0.45);
     border-radius: 1rem;
+}
+
+.toggle-button {
+    position: absolute;
+    top: .8rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    /* border: 2px solid rgb(235, 37, 37); */
+}
+
+.toggle-button:hover {
+    background-color: rgba(158, 158, 158, 0.45);
+}
+
+@media (max-width: 400px) {
+    .toggle-button {
+        display: flex;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        /* border: 5px solid rgb(235, 37, 37); */
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        /* border: 5px solid rgb(226, 111, 17); */
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+
+    .nav li {
+        width: 100%;
+        text-align: center;
+        padding: .25rem 0;
+    }
+
+    .nav li.active,
+    .nav li:hover {
+        border-radius: 0;
+    }
 }
 
 .home-container {
@@ -105,14 +174,10 @@ body {
     border-radius: 50%;
 }
 
-@media (width < 600px) {
+@media (width < 700px) or (orientation: portrait) {
     .home-container {
         flex-direction: column;
         padding: 2rem 0;
-    }
-
-    .nav {
-        padding: 0 2rem;
     }
 }
 
