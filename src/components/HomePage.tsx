@@ -1,18 +1,18 @@
-import Typewriter from 'typewriter-effect';
+import { Typewriter, useTypewriter, Cursor } from 'react-simple-typewriter';
 
 export default function HomePage() {
+    const [text]:any = useTypewriter({
+      words: ['Henry', 'a developer', 'an artist'],
+      loop: false,
+      typeSpeed: 80,
+      deleteSpeed: 50,
+      delaySpeed: 1500
+    })
     return (
       <>
         <div className="home-container">
           <div className="home-text-section">
-            <h1>Hello! I am 
-              <Typewriter
-                options={{
-                  strings: ["Henry", "a developer", "an artist"],
-                  autoStart: true,
-                  loop: true,
-                }}
-              />
+            <h1>Hello! I am {text}<Cursor />
             </h1>
             <p>
               I have a CS degree from Texas A&M University.
