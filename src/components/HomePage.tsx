@@ -1,16 +1,21 @@
-import Typewriter from 'typewriter-effect';
+import Typewriter from "typewriter-effect"
 
 export default function HomePage() {
     return (
       <>
         <div className="home-container">
           <div className="home-text-section">
-            <h1>Hello! I am 
+            <h1>
               <Typewriter
-                options={{
-                  strings: ["Henry", "a developer", "an artist"],
-                  autoStart: true,
-                  loop: true,
+                onInit={(typewriter) => {
+                  const words = ["a developer", "an artist", "Henry"]
+                  typewriter.typeString("Hello! I am ")
+                
+                  for (let index = 0; index < words.length-1; index++) {
+                    typewriter.typeString(words[index]).pauseFor(500).deleteChars(words[index].length)
+                  }
+                  typewriter.typeString("Henry")
+                  typewriter.start()
                 }}
               />
             </h1>
