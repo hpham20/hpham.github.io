@@ -233,19 +233,40 @@ body {
 .item {
     text-align: center;
     font-size: 2em;
-    /* background-color: rgba(0, 0, 0, 0.2); */
-    background-image: radial-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.6));
+    /* background-color: rgba(255, 255, 255, 0.476); */
+    background-image: radial-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.6));
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    width: 15rem;
-    height: 15rem;
+    width: 11rem;
+    height: 11rem;
 }
 
 .item img {
     width: 60%;
-    filter: drop-shadow(.35rem .35rem 0 rgba(0, 0, 0, 0.5));
+    /* filter: drop-shadow(.2rem .2rem 0 rgba(0, 0, 0, 0.3)); */
+}
+
+.middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s ease;
+    opacity: 0;
+    width: 11rem;
+    height: 11rem;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 50%;
+}
+
+.item:hover .middle {
+    opacity: 1;
+}
+
+.skill-text {
+    font-size: 0.8em;
 }
 
 @media (max-width: 600px) {
