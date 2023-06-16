@@ -4,6 +4,32 @@
     box-sizing: border-box;
 }
 
+/* --------- */
+/*Scrollbar   */
+/* --------- */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgb(10, 24, 73);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 204, 255, 0.959);
+    border-radius: 12px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(88, 222, 255, 0.911);
+    border-radius: 12px;
+}
+
+
 .App {
     display: flex;
     flex-direction: column;
@@ -285,4 +311,15 @@ body {
     .skills-grid {
         grid-template-columns: repeat(1, 1fr);
     }
+}
+
+.projects-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 1rem;
+    /* border: 5px solid rgb(222, 17, 226); */
+    color: white;
 }
